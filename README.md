@@ -4,7 +4,7 @@
 A discounted cash flow (DCF) model that estimates the intrinsic value of **Tata Consultancy Services (TCS.NS)** and judges whether the stock is over- or under-valued versus its live market price. Built in Python as a hands-on application of corporate finance fundamentals.
 
 > **On AI usage — stated upfront.** This project was built with the help of Claude (Anthropic) as a coding assistant. The **financial reasoning, every assumption, and every analytical decision are my own**; the AI assisted with Python syntax and structure — I directed what to build and why, and can explain and defend every line and number. I'm disclosing this deliberately: the goal was to *learn by building*, and owning the logic mattered more than typing it unaided.
-![Sensitivity analysis code](code_screenshot.png)
+![Sensitivity analysis code](code_screenshot.png.png)
 > **Headline result:** On deliberately conservative assumptions, TCS's intrinsic value works out to **~₹2,113/share against a market price of ₹2,465 — about 14% overvalued.** A sensitivity analysis shows the stock only looks cheap under a sub-11.5% WACC combined with 5%+ perpetual growth.
 
 ---
