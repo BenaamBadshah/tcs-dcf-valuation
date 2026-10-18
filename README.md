@@ -1,5 +1,5 @@
 ![TCS DCF Valuation](banner.png)
-# TCS DCF Valuation — Python *(built with AI assistance)*
+# TCS DCF Valuation — Python + Excel *(built with AI assistance)*
 
 A discounted cash flow (DCF) model that estimates the intrinsic value of **Tata Consultancy Services (TCS.NS)** and judges whether the stock is over- or under-valued versus its live market price. Built in Python as a hands-on application of corporate finance fundamentals.
 
@@ -98,6 +98,34 @@ Beta was estimated by regressing 5 years of weekly TCS returns against the Nifty
 - **Non-operating income excluded.** TCS's treasury/other income is left out of FCFF (it isn't operating); the corresponding cash pile is instead credited back in the equity bridge as net cash.
 - **Terminal value from first principles.** The Gordon formula is used as the closed form of a growing perpetuity (a geometric series converging because g < WACC).
 
+---
+
+## Excel model (verification)
+
+Alongside the Python model, this repo includes a full DCF **built in Excel** —
+`TCS-DCF-Model.xlsx` — as an independent cross-check. It reproduces the Python
+result to the rupee through the entire valuation engine, from the same first
+principles: plain-arithmetic discounting (no black-box functions), a live
+CAPM/WACC build, and a native WACC × terminal-growth sensitivity grid. The
+**Summary** tab is the at-a-glance view:
+
+![Excel DCF summary](TCS-DCF-Summary.png)
+
+> **On AI usage (Excel model) — stated upfront.** This spreadsheet was built with
+> Claude (Anthropic): I directed the model stage by stage and made every
+> analytical decision, and the AI generated the workbook's formulas, layout, and
+> formatting from those specifications. Its role is **verification** — it
+> independently reproduces my Python model in a second tool, and the two agree to
+> the rupee through enterprise value. The financial logic, assumptions, and data
+> choices are my own, carried from the Python build, and I can explain and defend
+> every formula and number. One deliberate difference: the Excel uses TCS's
+> **published** net cash (₹38,737 cr = ₹50,020 cr cash & investments − ₹11,283 cr
+> debt) rather than my earlier Python estimate of ~₹55,000 cr — which refines
+> intrinsic value to **₹2,074/share (~16% overvalued)** and is the more defensible figure.
+
+**What the Excel adds over the Python version:** a transparent cell-by-cell WACC
+build via CAPM; discounting done as plain `FCF ÷ (1+WACC)^t` you can trace by eye;
+inline notes explaining the "why" of every line; and a one-page Summary tab.
 ---
 
 ## How to run
